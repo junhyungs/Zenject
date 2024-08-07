@@ -11,6 +11,11 @@ public interface ISkill
     public void Shoot();
 }
 
+public interface IEnemy
+{
+    public void Name();
+}
+
 public class Gun : IWeapon
 {
     public void Shoot()
@@ -27,6 +32,14 @@ public class Sword : ISkill
     }
 }
 
+public class Enemy : IEnemy
+{
+    public void Name()
+    {
+        Debug.Log("Enemy");
+    }
+}
+
 public class Player : MonoBehaviour
 {
     //필드 주입
@@ -34,6 +47,15 @@ public class Player : MonoBehaviour
     private IWeapon _weapon;
 
     private ISkill _skill;
+    private IEnemy _enemy;
+
+    //프로퍼티 주입
+    [Inject]
+    public IEnemy InJectEnemy
+    {
+        get { return _enemy; }
+        set { _enemy = value; }
+    }
 
     private void Start()
     {
@@ -49,5 +71,7 @@ public class Player : MonoBehaviour
     }
 
 }
+
+
 
 

@@ -9,6 +9,8 @@ public class GameInstraller : MonoInstaller
     {
         Container.Bind<IWeapon>().To<Gun>().AsSingle();
         Container.Bind<ISkill>().To<Sword>().AsSingle();
-        Container.Bind<IEnemy>().To<Enemy>().AsSingle();    
+        Container.Bind<IEnemy>().To<Enemy>().AsSingle();
+
+        Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
     }
 }
