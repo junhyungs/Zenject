@@ -11,13 +11,25 @@ public interface IInteraction
 
 public class TestPlayer : MonoBehaviour
 {
-    private List<IInteraction> _interactionList;
+    //private List<IInteraction> _interactionList;
 
     [Inject]
-    private void SetList(List<IInteraction> interaction)
-    {
-        _interactionList = interaction; 
-    }
+    private IInteraction _whenInjectIntoInteraction;
+
+    //[Inject]
+    //private void SetList(List<IInteraction> interaction)
+    //{
+    //    _interactionList = interaction; 
+    //}
+
+    //[Inject(Id = "Box")]
+    //private IInteraction _boxInteraction;
+
+    //[Inject(Id = "Computer")]
+    //private IInteraction _computerInteraction;
+
+    //[Inject(Id = "Mouse")]
+    //private IInteraction _mouseInteraction;
 
     private void Start()
     {
@@ -28,11 +40,17 @@ public class TestPlayer : MonoBehaviour
         //}
 
         //List ¹æ¹ý 2
-        _interactionList[0].InteractionItem();
-        _interactionList[1].InteractionItem();
-        _interactionList[2].InteractionItem();
+        //_interactionList[0].InteractionItem();
+        //_interactionList[1].InteractionItem();
+        //_interactionList[2].InteractionItem();
 
+        //_whenInjectIntoInteraction.InteractionItem();
 
+        //_boxInteraction.InteractionItem();
+        //_computerInteraction.InteractionItem();
+        //_mouseInteraction.InteractionItem();
+
+        _whenInjectIntoInteraction.InteractionItem();
     }
 
 }

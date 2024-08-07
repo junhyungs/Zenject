@@ -12,5 +12,7 @@ public class GameInstraller : MonoInstaller
         Container.Bind<IEnemy>().To<Enemy>().AsSingle();
 
         Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
+
+
     }
 }
