@@ -1,0 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Computer : MonoBehaviour, IInteraction
+{
+    public void InteractionItem()
+    {
+        Debug.Log("Computer");
+    }
+
+}
