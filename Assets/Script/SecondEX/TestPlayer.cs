@@ -13,8 +13,8 @@ public class TestPlayer : MonoBehaviour
 {
     //private List<IInteraction> _interactionList;
 
-    [Inject]
-    private IInteraction _whenInjectIntoInteraction;
+    //[Inject]
+    //private IInteraction _whenInjectIntoInteraction;
 
     //[Inject]
     //private void SetList(List<IInteraction> interaction)
@@ -22,14 +22,14 @@ public class TestPlayer : MonoBehaviour
     //    _interactionList = interaction; 
     //}
 
-    //[Inject(Id = "Box")]
-    //private IInteraction _boxInteraction;
+    [Inject(Id = "Box")]
+    private IInteraction _boxInteraction;
 
-    //[Inject(Id = "Computer")]
-    //private IInteraction _computerInteraction;
+    [Inject(Id = "Computer")]
+    private IInteraction _computerInteraction;
 
-    //[Inject(Id = "Mouse")]
-    //private IInteraction _mouseInteraction;
+    [Inject(Id = "Mouse")]
+    private IInteraction _mouseInteraction;
 
     private void Start()
     {
@@ -46,11 +46,11 @@ public class TestPlayer : MonoBehaviour
 
         //_whenInjectIntoInteraction.InteractionItem();
 
-        //_boxInteraction.InteractionItem();
-        //_computerInteraction.InteractionItem();
-        //_mouseInteraction.InteractionItem();
+        _boxInteraction.InteractionItem();
+        _computerInteraction.InteractionItem();
+        _mouseInteraction.InteractionItem();
 
-        _whenInjectIntoInteraction.InteractionItem();
+        //_whenInjectIntoInteraction.InteractionItem();
     }
 
 }
